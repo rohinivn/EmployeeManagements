@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Employee.Data.Employees>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@if (TempData["Message"] != null)
+{
+    @Html.Label((string)TempData["Message"]);
+}<br/>
+@Html.ActionLink("Add New Employee","Create")
+<table border="1">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Work Type</th>
+        <th>Experience</th>
+        <th>Salary</th> 
+        <th>Action</th>
+    </tr>
+@foreach(Employee.Data.Employees employee in Model)
+{
+    <tr>
+        <td>@employee.EmployeeId</td>
+        <td>@employee.EmployeeName</td>
+        <td>@employee.WorkType</td>
+        <td>@employee.Experience</td>
+        <td>@employee.Salary</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = employee.EmployeeId })
+            @Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeId })
+        </td>
+    </tr>
+}
+</table>
+
