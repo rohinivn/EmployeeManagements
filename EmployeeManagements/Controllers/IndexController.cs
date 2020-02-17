@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Employee.Repository;
 using Employee.Data;
 using System.Web.Mvc;
@@ -34,7 +33,7 @@ namespace EmployeeManagements.Controllers
         public ActionResult Delete(string id)
         {
             employeeRepository.DeleteEmployee(id);
-            TempData["Message"] = "Employee Deleted";
+            TempData["Message"] = "Employee Deleted Successfully!";
             return RedirectToAction("Index");
         }
     }

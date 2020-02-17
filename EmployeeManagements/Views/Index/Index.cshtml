@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Welcome</h2>
 @if (TempData["Message"] != null)
 {
     @Html.Label((string)TempData["Message"]);
 }<br/>
-@Html.ActionLink("Add New Employee","Create")
+@Html.ActionLink("Add New Employee","Create")<br/>
 <table border="1">
     <tr>
         <th>Employee Id</th>
