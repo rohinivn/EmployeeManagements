@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Employee.Data.Employees>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Display";
 }
 
 <h2>Welcome</h2>
@@ -10,7 +10,7 @@
     @Html.Label((string)TempData["Message"]);
 }<br/>
 @Html.ActionLink("Add New Employee","Create")<br/>
-<table border="1">
+<table cellspacing="30" border="1">
     <tr>
         <th>Employee Id</th>
         <th>Employee Name</th>
@@ -28,7 +28,7 @@
         <td>@employee.Experience</td>
         <td>@employee.Salary</td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = employee.EmployeeId })
+            @Html.ActionLink("Edit / ", "Edit", new { id = employee.EmployeeId })
             @Html.ActionLink("Delete", "Delete", new { id = employee.EmployeeId })
         </td>
     </tr>

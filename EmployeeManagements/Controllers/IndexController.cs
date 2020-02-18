@@ -36,5 +36,17 @@ namespace EmployeeManagements.Controllers
             TempData["Message"] = "Employee Deleted Successfully!";
             return RedirectToAction("Index");
         }
+        public ActionResult Edit(string id)
+        {
+            Employees employees = employeeRepository.GetEmployee(id);
+            return View(employees);
+        }
+        [HttpPost]
+        public ActionResult Update(Employees employee)
+        {
+            employeeRepository.UpdateEmployee(employee);
+            TempData["Message"] = "Employee Details Updated Successfully";
+            return RedirectToAction("Index");
+        }
     }
 }

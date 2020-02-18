@@ -30,5 +30,14 @@ namespace Employee.Repository
             if (employee != null)
                 employees.Remove(employee);
         }
+        public void UpdateEmployee(Employees employee)
+        {
+            Employees employees = GetEmployee(employee.EmployeeId);
+            employees.EmployeeName = employee.EmployeeName;
+            employees.WorkType = employee.WorkType;
+            employees.Experience = employee.Experience;
+            employees.Salary = employee.Salary;
+
+        }
     }
 }

@@ -15,14 +15,6 @@
             this.Experience = experience;
             this.Salary = salary;
         }
-        public Employees(Employees employee)
-        {
-            this.EmployeeName = employee.EmployeeName;
-            this.WorkType = employee.WorkType;
-            this.EmployeeId = employee.EmployeeId;
-            this.Experience = employee.Experience;
-            this.Salary = employee.Salary;
-        }
         public Employees()
         {
 
