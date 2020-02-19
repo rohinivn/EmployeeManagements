@@ -3,14 +3,20 @@
 @{
     ViewBag.Title = "Display";
 }
-
+<style>
+    table,th,td{
+        border:1px solid black;
+        padding:15px;
+        width:100;
+    }
+</style>
 <h2>Welcome</h2>
 @if (TempData["Message"] != null)
 {
     @Html.Label((string)TempData["Message"]);
 }<br/>
 @Html.ActionLink("Add New Employee","Create")<br/>
-<table cellspacing="30" border="1">
+<table>
     <tr>
         <th>Employee Id</th>
         <th>Employee Name</th>

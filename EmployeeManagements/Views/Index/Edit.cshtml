@@ -3,12 +3,19 @@
 @{
     ViewBag.Title = "Edit";
 }
+<style>
+    table, th, td {
+        border: 1px solid black;
+        padding: 15px;
+        width: 100;
+    }
+</style>
 
 <h2>Edit</h2>
 @using (Html.BeginForm("Update", "Index", FormMethod.Post))
 {
     @Html.HiddenFor(Model => Model.EmployeeId);
-    <table border="1" cellspacing="30">
+    <table>
         <tr>
             <td>Employee Name : </td>
             <td>@Html.TextBoxFor(Model => Model.EmployeeName)</td>
@@ -27,7 +34,7 @@
         </tr>
         <tr>
             <td>
-                <input type="submit" value="Update"/>
+                <input type="submit" value="Update" />
             </td>
             <td><a href="/Index">Back</a></td>
         </tr>
